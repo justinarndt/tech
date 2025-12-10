@@ -1,0 +1,302 @@
+# -----------------------------------------------------------------------------
+# TECHNICAL WRITER - MASTER CONFIGURATION
+# -----------------------------------------------------------------------------
+site_name: Technical Writer
+site_url: https://technicalwriter.site
+site_author: Justin Arndt
+site_description: >-
+  Master technical writing with expert guides covering API documentation,
+  user manuals, AI-assisted docs, and domain-specific writing for software,
+  medical, finance, and engineering fields.
+
+repo_name: GitHub
+repo_url: https://github.com/justinarndt/tech
+edit_uri: ""
+
+# -----------------------------------------------------------------------------
+# THEME CONFIGURATION
+# -----------------------------------------------------------------------------
+theme:
+  name: material
+  language: en
+  custom_dir: docs/overrides
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - toc.follow
+    - content.code.copy
+    - content.tooltips
+    - search.suggest
+    - search.highlight
+    - search.share
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  icon:
+    logo: material/file-document-edit
+    repo: fontawesome/brands/github
+
+# -----------------------------------------------------------------------------
+# PLUGINS
+# -----------------------------------------------------------------------------
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+  - social:
+      cards_layout_options:
+        background_color: "#1E3A8A"
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+
+# -----------------------------------------------------------------------------
+# MARKDOWN EXTENSIONS
+# -----------------------------------------------------------------------------
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - abbr
+  - def_list
+
+# -----------------------------------------------------------------------------
+# EXTRA
+# -----------------------------------------------------------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/justinlarndt/
+      name: Connect on LinkedIn
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/JustinArndtAI
+      name: Follow on X
+    - icon: fontawesome/brands/github
+      link: https://github.com/justinarndt/tech
+      name: View on GitHub
+
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for.
+
+extra_css:
+  - stylesheets/extra.css
+
+# -----------------------------------------------------------------------------
+# NAVIGATION
+# -----------------------------------------------------------------------------
+nav:
+  - Home: index.md
+
+  - Introduction:
+    - intro/index.md
+    - What Is Technical Writing?: intro/what-is-technical-writing.md
+    - Role of Technical Writers: intro/role-of-technical-writers.md
+    - Technical vs Other Writing: intro/technical-vs-other-writing.md
+
+  - Fundamentals:
+    - fundamentals/index.md
+    - Audience Analysis: fundamentals/audience-analysis.md
+    - Clarity and Conciseness: fundamentals/clarity-conciseness.md
+    - Active vs Passive Voice: fundamentals/active-passive-voice.md
+    - Document Structure: fundamentals/document-structure.md
+    - Using Visuals Effectively: fundamentals/using-visuals.md
+    - Writing for Accessibility: fundamentals/accessibility.md
+    - Grammar Essentials: fundamentals/grammar-essentials.md
+    - Style Guides: fundamentals/style-guides.md
+    - Research Methods: fundamentals/research-methods.md
+    - Information Architecture: fundamentals/information-architecture.md
+    - Writing Process: fundamentals/writing-process.md
+    - Review and Editing: fundamentals/review-editing.md
+    - Terminology Management: fundamentals/terminology-management.md
+    - Content Reuse: fundamentals/content-reuse.md
+    - Minimalist Writing: fundamentals/minimalist-writing.md
+    - Task-Based Writing: fundamentals/task-based-writing.md
+    - Writing for Translation: fundamentals/writing-for-translation.md
+    - Quality Assurance: fundamentals/quality-assurance.md
+
+  - Document Types:
+    - types/index.md
+    - User Manuals: types/user-manuals.md
+    - API Documentation: types/api-documentation.md
+    - Release Notes: types/release-notes.md
+    - Knowledge Base Articles: types/knowledge-base.md
+    - Installation Guides: types/installation-guides.md
+    - Troubleshooting Guides: types/troubleshooting-guides.md
+    - SOPs: types/standard-operating-procedures.md
+    - White Papers: types/white-papers.md
+    - Case Studies: types/case-studies.md
+    - Technical Proposals: types/technical-proposals.md
+    - Policies and Compliance: types/policies-compliance.md
+    - Quick Reference Guides: types/quick-reference-guides.md
+    - FAQs: types/faqs.md
+    - Tutorials: types/tutorials.md
+    - Getting Started Guides: types/getting-started.md
+    - Migration Guides: types/migration-guides.md
+    - Deprecation Notices: types/deprecation-notices.md
+    - Architecture Documents: types/architecture-documents.md
+    - Runbooks: types/runbooks.md
+    - Internal Documentation: types/internal-documentation.md
+
+  - Tools & Technology:
+    - tools/index.md
+    - Markdown and Editors: tools/markdown-editors.md
+    - Documentation Platforms: tools/documentation-platforms.md
+    - Version Control: tools/version-control.md
+    - Collaboration Tools: tools/collaboration-tools.md
+    - Diagramming Tools: tools/diagramming-tools.md
+    - API Documentation Tools: tools/api-documentation-tools.md
+    - Screenshot and Recording: tools/screenshot-recording.md
+    - Linting and Quality: tools/linting-quality.md
+    - Static Site Generators: tools/static-site-generators.md
+    - Content Management: tools/content-management.md
+    - AI Writing Tools: tools/ai-writing-tools.md
+    - Automation and CI/CD: tools/automation-cicd.md
+
+  - Domain-Specific:
+    - domains/index.md
+    - Software Documentation:
+      - domains/software/index.md
+      - Documenting Codebases: domains/software/documenting-codebases.md
+      - SaaS Documentation: domains/software/saas-documentation.md
+      - Mobile App Docs: domains/software/mobile-app-docs.md
+      - Cloud Infrastructure: domains/software/cloud-infrastructure.md
+      - DevOps Documentation: domains/software/devops-documentation.md
+      - AI and ML Documentation: domains/software/ai-ml-documentation.md
+      - Prompt Engineering Docs: domains/software/prompt-engineering.md
+      - AI Ethics Documentation: domains/software/ai-ethics.md
+      - LLM Documentation: domains/software/llm-documentation.md
+      - Generative AI Tools: domains/software/generative-ai-tools.md
+      - Blockchain Documentation: domains/software/blockchain-documentation.md
+      - IoT Documentation: domains/software/iot-documentation.md
+      - Cybersecurity Docs: domains/software/cybersecurity-docs.md
+      - Gaming Documentation: domains/software/gaming-documentation.md
+      - Open Source Projects: domains/software/open-source-projects.md
+    - Medical Writing:
+      - domains/medical/index.md
+      - Regulatory Writing: domains/medical/regulatory-writing.md
+      - Clinical Trial Documentation: domains/medical/clinical-trials.md
+      - Medical Device Manuals: domains/medical/device-manuals.md
+      - Pharmaceutical Documentation: domains/medical/pharmaceutical-docs.md
+      - Healthcare IT: domains/medical/healthcare-it.md
+      - Patient-Facing Content: domains/medical/patient-facing.md
+      - Lab Documentation: domains/medical/lab-documentation.md
+      - Medical AI Documentation: domains/medical/medical-ai.md
+    - Engineering:
+      - domains/engineering/index.md
+      - Hardware Documentation: domains/engineering/hardware-documentation.md
+      - Mechanical Engineering: domains/engineering/mechanical-engineering.md
+      - Electrical Documentation: domains/engineering/electrical-documentation.md
+      - Civil Engineering: domains/engineering/civil-engineering.md
+      - Automotive Documentation: domains/engineering/automotive-documentation.md
+      - Aerospace Documentation: domains/engineering/aerospace-documentation.md
+      - Manufacturing Docs: domains/engineering/manufacturing-docs.md
+      - Robotics Documentation: domains/engineering/robotics-documentation.md
+    - Finance:
+      - domains/finance/index.md
+      - Compliance Documentation: domains/finance/compliance-documentation.md
+      - FinTech Documentation: domains/finance/fintech-documentation.md
+      - Investment Documentation: domains/finance/investment-documentation.md
+      - Risk Documentation: domains/finance/risk-documentation.md
+      - Cryptocurrency Docs: domains/finance/cryptocurrency-docs.md
+      - ESG Reporting: domains/finance/esg-reporting.md
+      - Banking Documentation: domains/finance/banking-documentation.md
+
+  - Advanced Skills:
+    - advanced/index.md
+    - SEO for Documentation: advanced/seo-documentation.md
+    - Localization: advanced/localization.md
+    - Agile Documentation: advanced/agile-documentation.md
+    - Measuring Success: advanced/measuring-success.md
+    - Ethical Considerations: advanced/ethical-considerations.md
+    - Future Trends: advanced/future-trends.md
+    - Single-Sourcing: advanced/single-sourcing.md
+    - Doc Versioning: advanced/doc-versioning.md
+    - Review Workflows: advanced/review-workflows.md
+    - Crisis Documentation: advanced/crisis-documentation.md
+
+  - Career:
+    - career/index.md
+    - Getting Started: career/getting-started.md
+    - Freelance Writing: career/freelance-writing.md
+    - Building a Portfolio: career/building-portfolio.md
+    - Networking: career/networking.md
+    - Certifications: career/certifications.md
+    - Job Search: career/job-search.md
+    - Mentorship: career/mentorship.md
+    - Consulting: career/consulting.md
+
+  - Resources:
+    - resources/index.md
+    - Templates: resources/templates.md
+    - Glossary: resources/glossary.md
+    - Reading List: resources/reading-list.md
+    - Cheat Sheets: resources/cheat-sheets.md
+    - Case Study Archive: resources/case-study-archive.md
+    - Video Tutorials: resources/video-tutorials.md
+    - Community: resources/community.md
+    - Updates: resources/updates.md
+
+copyright: Copyright &copy; 2025 Justin Arndt. All rights reserved.
