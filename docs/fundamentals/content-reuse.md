@@ -99,19 +99,17 @@ Changing the variable updates all instances.
 
 Conditional content shows different variations from the same source:
 
-```markdown
-{% if platform == "windows" %}
-Open Command Prompt and run:
-```cmd
-installer.exe
+```text
+if platform == "windows":
+    Open Command Prompt and run:
+    installer.exe
+
+elif platform == "mac":
+    Open Terminal and run:
+    ./installer.sh
 ```
-{% elif platform == "mac" %}
-Open Terminal and run:
-```bash
-./installer.sh
-```
-{% endif %}
-```
+
+The actual syntax varies by tool (DITA, Flare, static site generators).
 
 Single source, multiple outputs.
 
